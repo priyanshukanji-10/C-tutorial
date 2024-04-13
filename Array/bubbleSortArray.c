@@ -1,38 +1,63 @@
 #include <stdio.h>
 
-void bubbleSort(int *);
+void bubbleSortDecending(int *, int);
+void bubbleSortAscending(int *, int);
 void swap(int *, int *);
 
 int main()
 {
-    int array[5];
+    int n;
+    printf("Enter static boundary of the array:");
+    scanf("%d", &n);
 
-    printf("Enter 5 elements:\n");
-    for (int i = 0; i < 5; i++)
+    int array[n];
+
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++)
     {
-        printf("Enter %d element: ", (i + 1));
+        printf("Enter element no %d: ", (i + 1));
         scanf("%d", (array + i));
     }
 
-    bubbleSort(array);
+    bubbleSortAscending(array, n);
 
     printf("Sorted array: ");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%d ", *(array + i));
     }
     printf("\n");
 
+    bubbleSortDecending(array, n);
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", *(array + i));
+    }
+    printf("\n");
     return 0;
 }
 
-void bubbleSort(int p[])
+void bubbleSortAscending(int p[], int n)
 {
-    for (int i = 0; i < 5 - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < 5 - i - 1; j++)
+        for (int j = 0; j < n - i - 1; j++)
         {
             if (p[j] > p[j + 1])
+            {
+                swap((p + j), (p + j + 1));
+            }
+        }
+    }
+}
+void bubbleSortDecending(int p[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (p[j] < p[j + 1])
             {
                 swap((p + j), (p + j + 1));
             }
