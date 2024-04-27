@@ -34,6 +34,7 @@ int main()
         }
         printf("\n");
     }
+    return 0;
 }
 void bubbleSortAscending(int p[], int n)
 {

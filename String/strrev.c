@@ -1,4 +1,5 @@
 #include <stdio.h>
+// ! function Declarations
 int strlength(char *);
 void strReverse(char *, int n);
 void swap(char *, char *);
@@ -12,7 +13,7 @@ int main()
     strReverse(string, stringLength);
     printf("Reversed String is:%s", string);
 }
-
+// * Strlength calculates no of chars in a string
 int strlength(char p[])
 {
     int count = 0;
@@ -22,7 +23,7 @@ int strlength(char p[])
     }
     return (--count);
 }
-
+// * strReverse reverses given string.
 void strReverse(char p[], int n)
 {
     for (int i = 0; i < n / 2; i++)
@@ -36,3 +37,4 @@ void swap(char *a, char *b)
     *a = *b;
     *b = temp;
 }
+// toDo :Do the same with malloc /calloc
