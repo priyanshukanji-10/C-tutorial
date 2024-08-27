@@ -18,6 +18,11 @@ int factorial(int n)
     {
         return 1;
     }
-    int factNm1 = factorial(n - 1);
-    int factN = factNm1 * n;
+    else
+    {
+
+        int factNm1 = factorial(n - 1);
+        int factN = factNm1 * n;
+        return factN;
+    }
 }

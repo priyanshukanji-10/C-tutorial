@@ -28,7 +28,7 @@ void strReverse(char p[], int n)
 {
     for (int i = 0; i < n / 2; i++)
     {
-        swap((p + i), (p + n - i));
+        swap((p + i), (p + n - i - 1));
     }
 }
 void swap(char *a, char *b)
